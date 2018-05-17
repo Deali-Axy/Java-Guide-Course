@@ -6,7 +6,10 @@
 
 #### 软件架构
 本项目使用 Jetbrain IDEA 创建，使用 Eclipse 也可以导入运行。
-用到了`QFramework for Java`库。
+
+用到了`QFramework Java`库。
+下载：[QFramework](https://gitee.com/deali/CodeZone/raw/master/java/jar/QFramework.jar)
+
 
 #### 安装教程
 
@@ -18,13 +21,11 @@ git clone https://gitee.com/deali/Java-Guide-Course.git
 
 2. 导入项目
 
-3. 运行
+3. 添加`QFramework`的引用 
 
 #### 使用说明
 
-1. xxxx
-2. xxxx
-3. xxxx
+暂时没有写。
 
 #### 参与贡献
 

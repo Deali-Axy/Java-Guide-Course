@@ -19,7 +19,7 @@ public class FileMerge {
 
         String path = "E:\\file";//我的电脑没有D盘
         String fileBaseName = QPath.join(path, "201611444120");
-        String objectFileNmae = QPath.join(path, "201611444120.txt");
+        String objectFileName = QPath.join(path, "201611444120.txt");
 
         Path p = Paths.get(path);
         if (Files.notExists(p)) {
@@ -64,7 +64,7 @@ public class FileMerge {
             }
         }
         try {
-            BufferedWriter bw = new BufferedWriter(new FileWriter(objectFileNmae));
+            BufferedWriter bw = new BufferedWriter(new FileWriter(objectFileName));
             for (String line : lines) {
                 bw.write(line);
                 bw.newLine();

@@ -22,7 +22,7 @@ public class FileMergeViaQfx {
 
         String path = "E:\\file";//我的电脑没有D盘
         String fileBaseName = QPath.join(path, "201611444120");
-        String objectFileNmae = QPath.join(path, "201611444120.txt");
+        String objectFileName = QPath.join(path, "201611444120.txt");
 
         QDirectory.create(path);
 
@@ -59,7 +59,7 @@ public class FileMergeViaQfx {
             }
         }
         try {
-            QStreamWriter sw = new QStreamWriter(objectFileNmae);
+            QStreamWriter sw = new QStreamWriter(objectFileName);
             for (String line : lines) {
                 sw.writeLine(line);
             }

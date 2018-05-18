@@ -1,13 +1,14 @@
 package da.Experiment.Exp11.extra3;
 
 import qfx.diagnostics.QDebug;
-import qfx.io.*;
+import qfx.io.QConsole;
+import qfx.io.QDirectory;
+import qfx.io.QPath;
+import qfx.io.QStreamReader;
+import qfx.io.QStreamWriter;
 import qfx.util.QMath;
 
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 
 /**

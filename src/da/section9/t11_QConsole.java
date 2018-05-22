@@ -24,9 +24,9 @@ public class t11_QConsole {
             while (line != null) {
                 linesCount++;
                 charsCount += line.length();
-                for (char c : line.toCharArray()) {
+                for (char c : line.trim().toCharArray()) {
                     if (c >= 'A' && c <= 'z')
-                        charsCount++;
+                        alphaCount++;
                 }
                 line = bufferedReader.readLine();
             }

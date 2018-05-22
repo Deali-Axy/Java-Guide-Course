@@ -1,4 +1,4 @@
-package da.section8.homework.t14;
+package da.section8.t14;
 
 import qfx.io.QConsole;
 

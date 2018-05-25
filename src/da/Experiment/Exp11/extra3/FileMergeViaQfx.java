@@ -27,15 +27,15 @@ public class FileMergeViaQfx {
 
         QDirectory.create(path);
 
-        ArrayList<File> files = new ArrayList<>();
-        files.add(new File(fileBaseName + "A.txt"));
-        files.add(new File(fileBaseName + "B.txt"));
-        files.add(new File(fileBaseName + "C.txt"));
+        ArrayList<String> files = new ArrayList<>();
+        files.add(fileBaseName + "A.txt");
+        files.add(fileBaseName + "B.txt");
+        files.add(fileBaseName + "B.txt");
 
         // Write to files
-        for (File f : files) {
+        for (String s : files) {
             try {
-                QStreamWriter sw = new QStreamWriter(f.getAbsolutePath());
+                QStreamWriter sw = new QStreamWriter(s);
                 sw.writeLine(generateRndInteger());
                 sw.writeLine(generateRndInteger());
                 sw.close();
@@ -48,9 +48,9 @@ public class FileMergeViaQfx {
 
         //Read from files and merge files
         ArrayList<String> lines = new ArrayList<>();
-        for (File f : files) {
+        for (String s : files) {
             try {
-                QStreamReader sr = new QStreamReader(f.getAbsolutePath());
+                QStreamReader sr = new QStreamReader(s);
                 String line;
                 while ((line = sr.readLine()) != null) {
                     lines.add(line);

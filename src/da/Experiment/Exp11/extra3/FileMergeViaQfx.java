@@ -1,7 +1,11 @@
 package da.Experiment.Exp11.extra3;
 
 import qfx.diagnostics.QDebug;
-import qfx.io.*;
+import qfx.io.QConsole;
+import qfx.io.QDirectory;
+import qfx.io.QPath;
+import qfx.io.QStreamReader;
+import qfx.io.QStreamWriter;
 import qfx.util.QMath;
 
 import java.io.*;
@@ -19,7 +23,7 @@ public class FileMergeViaQfx {
 
         String path = "E:\\file";//我的电脑没有D盘
         String fileBaseName = QPath.join(path, "201611444120");
-        String objectFileNmae = QPath.join(path, "201611444120.txt");
+        String objectFileName = QPath.join(path, "201611444120.txt");
 
         QDirectory.create(path);
 
@@ -56,7 +60,7 @@ public class FileMergeViaQfx {
             }
         }
         try {
-            QStreamWriter sw = new QStreamWriter(objectFileNmae);
+            QStreamWriter sw = new QStreamWriter(objectFileName);
             for (String line : lines) {
                 sw.writeLine(line);
             }

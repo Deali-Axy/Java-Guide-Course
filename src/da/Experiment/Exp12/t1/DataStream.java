@@ -1,15 +1,17 @@
 package da.Experiment.Exp12.t1;
 
 import qfx.io.QConsole;
+import qfx.util.QDateTime;
 import qfx.util.QMath;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
+import java.util.Random;
 
 public class DataStream {
     private static QConsole console = new QConsole(System.in, System.out);

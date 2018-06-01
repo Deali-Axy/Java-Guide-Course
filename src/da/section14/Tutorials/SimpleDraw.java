@@ -1,4 +1,4 @@
-package da.section14.Tutorials.GUIForm;
+package da.section14.Tutorials;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,11 +11,12 @@ public class SimpleDraw extends JFrame {
 
     public SimpleDraw() {
         super("SimpleDraw");
-        this.setContentPane(panelMain);
-        this.setSize(500, 500);
+        panelMain = new DrawPanel();
+        panelMain.setLayout(new BorderLayout(0, 0));
+        this.setSize(1500, 1000);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.pack();
+        this.setContentPane(panelMain);
         this.setVisible(true);
     }
 

@@ -29,7 +29,7 @@ public class t11 {
                 charsCount += line.length();
                 for (char c : line.toCharArray()) {
                     if (c >= 'A' && c <= 'z')
-                        charsCount++;
+                        alphaCount++;
                 }
                 line = bufferedReader.readLine();
             }

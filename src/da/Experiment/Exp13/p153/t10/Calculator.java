@@ -1,4 +1,4 @@
-﻿package da.Experiment.Exp13.p153.t10;
+package da.Experiment.Exp13.p153.t10;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -25,6 +25,8 @@ public class Calculator {
     private JPanel panelMain;
     private JButton buttonClear;
     private JButton buttonBack;
+    private JLabel lblCurVal;
+    private JLabel lblOp;
 
     /**
      * 操作符
@@ -45,22 +47,19 @@ public class Calculator {
      * 缓冲区数据
      */
     private StringBuilder buffer = new StringBuilder();
-    /**
-     * 结果数值
-     */
-    private double resValue = 0;
 
     public enumOperator operator = enumOperator.none;
 
 
     public Calculator() {
         this.txtResult.setEditable(false);
+        this.lblCurVal.setText("");
+        this.lblOp.setText("");
 
         a1Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 buffer.append(1);
-                curValue = Integer.valueOf(buffer.toString());
                 txtResult.setText(buffer.toString());
             }
         });
@@ -68,7 +67,6 @@ public class Calculator {
             @Override
             public void actionPerformed(ActionEvent e) {
                 buffer.append(2);
-                curValue = Integer.valueOf(buffer.toString());
                 txtResult.setText(buffer.toString());
             }
         });
@@ -76,7 +74,6 @@ public class Calculator {
             @Override
             public void actionPerformed(ActionEvent e) {
                 buffer.append(3);
-                curValue = Integer.valueOf(buffer.toString());
                 txtResult.setText(buffer.toString());
             }
         });
@@ -84,7 +81,6 @@ public class Calculator {
             @Override
             public void actionPerformed(ActionEvent e) {
                 buffer.append(4);
-                curValue = Integer.valueOf(buffer.toString());
                 txtResult.setText(buffer.toString());
             }
         });
@@ -92,7 +88,6 @@ public class Calculator {
             @Override
             public void actionPerformed(ActionEvent e) {
                 buffer.append(5);
-                curValue = Integer.valueOf(buffer.toString());
                 txtResult.setText(buffer.toString());
             }
         });
@@ -100,7 +95,6 @@ public class Calculator {
             @Override
             public void actionPerformed(ActionEvent e) {
                 buffer.append(6);
-                curValue = Integer.valueOf(buffer.toString());
                 txtResult.setText(buffer.toString());
             }
         });
@@ -108,7 +102,6 @@ public class Calculator {
             @Override
             public void actionPerformed(ActionEvent e) {
                 buffer.append(7);
-                curValue = Integer.valueOf(buffer.toString());
                 txtResult.setText(buffer.toString());
             }
         });
@@ -116,7 +109,6 @@ public class Calculator {
             @Override
             public void actionPerformed(ActionEvent e) {
                 buffer.append(8);
-                curValue = Integer.valueOf(buffer.toString());
                 txtResult.setText(buffer.toString());
             }
         });
@@ -124,7 +116,6 @@ public class Calculator {
             @Override
             public void actionPerformed(ActionEvent e) {
                 buffer.append(9);
-                curValue = Integer.valueOf(buffer.toString());
                 txtResult.setText(buffer.toString());
             }
         });
@@ -132,21 +123,29 @@ public class Calculator {
             @Override
             public void actionPerformed(ActionEvent e) {
                 buffer.append(0);
-                curValue = Integer.valueOf(buffer.toString());
                 txtResult.setText(buffer.toString());
             }
         });
         buttonDot.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                buffer.append('.');
+                //不能输入两个小数点
+                if (!(buffer.indexOf(".") > -1))
+                    buffer.append('.');
                 txtResult.setText(buffer.toString());
             }
         });
         buttonCalculate.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                double bufferVal = Double.valueOf(buffer.toString());
+                curValue = get_result(curValue, bufferVal, operator);
+                buffer = new StringBuilder();
+                buffer.append(curValue);
+                txtResult.setText(buffer.toString());
+                lblCurVal.setText("");
+                lblOp.setText("");
+                operator = enumOperator.none;
             }
         });
         buttonClear.addActionListener(new ActionListener() {
@@ -154,7 +153,9 @@ public class Calculator {
             public void actionPerformed(ActionEvent e) {
                 buffer = new StringBuilder();
                 curValue = 0;
-                resValue = 0;
+                operator = enumOperator.none;
+                lblOp.setText("");
+                lblCurVal.setText("");
                 txtResult.setText("");
             }
         });
@@ -163,6 +164,58 @@ public class Calculator {
             public void actionPerformed(ActionEvent e) {
                 buffer.deleteCharAt(buffer.length() - 1);
                 txtResult.setText(buffer.toString());
+            }
+        });
+        buttonAdd.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                if (operator != enumOperator.none)
+                    buttonCalculate.doClick();
+                curValue = Double.valueOf(buffer.toString());
+                operator = enumOperator.add;
+                lblOp.setText("+");
+                lblCurVal.setText(buffer.toString());
+                txtResult.setText("");
+                buffer = new StringBuilder();
+            }
+        });
+        buttonSub.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                if (operator != enumOperator.none)
+                    buttonCalculate.doClick();
+                curValue = Double.valueOf(buffer.toString());
+                operator = enumOperator.sub;
+                lblOp.setText("-");
+                lblCurVal.setText(buffer.toString());
+                txtResult.setText("");
+                buffer = new StringBuilder();
+            }
+        });
+        buttonMultiply.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                if (operator != enumOperator.none)
+                    buttonCalculate.doClick();
+                curValue = Double.valueOf(buffer.toString());
+                operator = enumOperator.multiply;
+                lblOp.setText("×");
+                lblCurVal.setText(buffer.toString());
+                txtResult.setText("");
+                buffer = new StringBuilder();
+            }
+        });
+        buttonDivide.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                if (operator != enumOperator.none)
+                    buttonCalculate.doClick();
+                curValue = Double.valueOf(buffer.toString());
+                operator = enumOperator.divide;
+                lblOp.setText("÷");
+                lblCurVal.setText(buffer.toString());
+                txtResult.setText("");
+                buffer = new StringBuilder();
             }
         });
     }
@@ -188,7 +241,7 @@ public class Calculator {
         JFrame frame = new JFrame("Calculator");
         frame.setContentPane(new Calculator().panelMain);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(500, 400);
+        frame.setSize(500, 500);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }

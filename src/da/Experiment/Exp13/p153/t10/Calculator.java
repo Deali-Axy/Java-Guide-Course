@@ -1,4 +1,4 @@
-﻿package da.Experiment.Exp13.p153.t10;
+package da.Experiment.Exp13.p153.t10;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

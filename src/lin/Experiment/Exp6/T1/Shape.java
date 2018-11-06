@@ -6,12 +6,12 @@ public interface Shape {
      *
      * @return 体积
      */
-    float volume();
+    double volume();
 
     /**
      * 计算表面积
      *
      * @return 表面积
      */
-    float area();
+    double area();
 }

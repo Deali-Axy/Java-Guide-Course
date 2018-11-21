@@ -8,15 +8,24 @@ import java.util.Scanner;
  * 提示用户输入一个年份(如2018)，输出该年的年历
  */
 public class PrintCalendar {
-    public static void main(String[] args) {
-        String[] wd = {"日", "一", "二", "三", "四", "五", "六"};
+    private static final String[] wd = {"日", "一", "二", "三", "四", "五", "六"};
+
+    public static void main(String... args) {
         Scanner s = new Scanner(System.in);
         P("请输入要查询的年份：");
         int y = s.nextInt();
-        P("请输入月份：");
-        int m = s.nextInt();
+        for (int i = 1; i <= 12; i++) {
+            printMonthCalendar(y, i);
+        }
+    }
+
+    private static void printMonthCalendar(int year, int month) {
+        int y = year;
+        int m = month;
 
         GregorianCalendar g = new GregorianCalendar(y, m - 1, 1);
+
+        P(String.format("%d 年 %d 月", y, m));
 
         P("\n星期\t");
         for (int j = 0; j < wd.length; ++j)

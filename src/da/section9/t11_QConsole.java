@@ -11,7 +11,7 @@ public class t11_QConsole {
     public static void main(String args[]) throws Exception {
         String fileName;
         QConsole console = new QConsole(System.in, System.out);
-        console.printf("enter file path: ");
+        console.writeLine("enter file path: ");
         fileName = console.readLine();
 
         int linesCount = 0;
@@ -31,13 +31,13 @@ public class t11_QConsole {
                 line = bufferedReader.readLine();
             }
         } catch (FileNotFoundException e) {
-            console.printf("Error! File not fount. \nMsg: %s\n", e.getMessage());
+            console.writeLine("Error! File not fount. \nMsg: %s\n", e.getMessage());
         } catch (IOException e) {
-            console.printf("Error! Msg: %s\n", e.getMessage());
+            console.writeLine("Error! Msg: %s\n", e.getMessage());
         }
 
-        console.printf("Lines Count: %d\n", linesCount);
-        console.printf("All Chars Count: %d\n", charsCount);
-        console.printf("Aplha Count: %d\n", alphaCount);
+        console.writeLine("Lines Count: %d\n", linesCount);
+        console.writeLine("All Chars Count: %d\n", charsCount);
+        console.writeLine("Aplha Count: %d\n", alphaCount);
     }
 }

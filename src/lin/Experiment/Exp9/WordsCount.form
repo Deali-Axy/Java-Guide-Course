@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="lin.Experiment.Exp9.WordsCount">
+  <grid id="27dc6" binding="MainPanel" layout-manager="GridLayoutManager" row-count="3" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="11152" height="22414"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <component id="43b17" class="javax.swing.JTextArea" binding="textArea1" default-binding="true">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="50"/>
+          </grid>
+        </constraints>
+        <properties>
+          <font size="20"/>
+          <lineWrap value="true"/>
+          <text value="Celtic winger James Forrest scored a hat trick - taking his tally to five in two games - to put Alex McLeish's side 3-1 up just after the hour, cancelling out Beram Kayal's surprise opener.  However, with the Scots in control, Eran Zahavi set up a tense conclusion and it took a stunning save from Allan McGregor to stop Tomer Hemed's late, late volley and earn Scotland victory.  The win sets up a potential play-off at Hampden against Finland in March 2020 - with a possible final against Norway or Serbia.  However, those play-off matches will only be necessary should Scotland fail to emerge from the main Euro 2020 qualifiers, for which they will be in the third pot of seeds with the draw made on 2 December.  Scotland also now join the likes of Germany, Croatia and Wales in League B for the next edition of the Nations League after a win that eases the pressure on McLeish after an abject 2-1 defeat in Israel last month."/>
+          <wrapStyleWord value="true"/>
+        </properties>
+      </component>
+      <component id="1671c" class="javax.swing.JTextArea" binding="textArea2" default-binding="true">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="2" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="50"/>
+          </grid>
+        </constraints>
+        <properties>
+          <font size="20"/>
+          <lineWrap value="true"/>
+          <wrapStyleWord value="true"/>
+        </properties>
+      </component>
+      <component id="cfa73" class="javax.swing.JButton" binding="actionButton" default-binding="true">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font size="20"/>
+          <text value="Action!"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>

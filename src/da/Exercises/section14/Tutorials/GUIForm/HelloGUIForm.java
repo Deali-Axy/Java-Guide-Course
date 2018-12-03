@@ -1,4 +1,4 @@
-package da.section14.Tutorials.GUIForm;
+package da.Exercises.section14.Tutorials.GUIForm;
 
 import qfx.util.QDateTime;
 

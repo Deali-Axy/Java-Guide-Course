@@ -1,4 +1,4 @@
-package da.section8.t6;
+package da.Exercises.section8.t6;
 
 import qfx.io.QConsole;
 

@@ -29,7 +29,8 @@ public class T2 {
         }
     }
 
-    public static Integer[] generate(int x) {
+
+    private static Integer[] generate(int x) {
         ArrayList<Integer> integers = new ArrayList<>();
         for (int i = 0; i < x; i++) {
             integers.add((int) (Math.random() * 5));

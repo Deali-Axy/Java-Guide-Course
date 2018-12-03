@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.GridPane?>
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="lin.Experiment.Exp12.T1.Controller"
+          prefHeight="400.0" prefWidth="600.0" alignment="CENTER" hgap="10" vgap="10">
+
+    <padding>
+        <Insets top="25" right="25" bottom="10" left="25"/>
+    </padding>
+
+
+    <Label text="这是一个标签" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="4" textAlignment="CENTER"/>
+    <Button text="第一页" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+    <Button text="上一页" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+    <Button text="下一页" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+    <Button text="最后页" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+
+</GridPane>

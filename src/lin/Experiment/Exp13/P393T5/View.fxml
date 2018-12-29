@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="lin.Experiment.Exp13.P393T5.Controller"
+          prefHeight="400.0" prefWidth="600.0" alignment="CENTER" hgap="10" vgap="10">
+
+    <GridPane GridPane.rowIndex="0" GridPane.columnSpan="6" hgap="10" vgap="10">
+        <Label text="数字1" GridPane.rowIndex="0" GridPane.columnIndex="0" textAlignment="CENTER"/>
+        <TextField fx:id="txtNum1" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+        <Label text="数字2" GridPane.rowIndex="0" GridPane.columnIndex="2" textAlignment="CENTER"/>
+        <TextField fx:id="txtNum2" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+        <Label text="=" GridPane.rowIndex="0" GridPane.columnIndex="4" textAlignment="CENTER"/>
+        <TextField fx:id="txtResult" GridPane.rowIndex="0" GridPane.columnIndex="5"/>
+    </GridPane>
+
+
+    <GridPane GridPane.rowIndex="1" GridPane.columnSpan="6" alignment="CENTER" hgap="10" vgap="10">
+        <Button text="加法" GridPane.rowIndex="1" GridPane.columnIndex="0" onAction="#onAddAction"/>
+        <Button text="减法" GridPane.rowIndex="1" GridPane.columnIndex="1" onAction="#onMinusAction"/>
+        <Button text="乘法" GridPane.rowIndex="1" GridPane.columnIndex="2" onAction="#onMultiplyAction"/>
+        <Button text="除法" GridPane.rowIndex="1" GridPane.columnIndex="3" onAction="#onDivideAction"/>
+    </GridPane>
+</GridPane>
